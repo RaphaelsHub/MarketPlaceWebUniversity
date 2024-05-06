@@ -22,3 +22,9 @@ C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Helper\obj\Deb
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Helper\obj\Debug\WebProject.Helper.csproj.CoreCompileInputs.cache
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Helper\obj\Debug\WebProject.Helper.dll
 C:\Users\Chiril\Documents\GitHub\WebProduct\WebProject\WebProject.Helper\obj\Debug\WebProject.Helper.pdb
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Helper\bin\Debug\WebProject.Helper.dll
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Helper\bin\Debug\WebProject.Helper.pdb
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Helper\obj\Debug\WebProject.Helper.csproj.AssemblyReference.cache
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Helper\obj\Debug\WebProject.Helper.csproj.CoreCompileInputs.cache
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Helper\obj\Debug\WebProject.Helper.dll
+D:\!Univer\Univer_4th_sem\!Project\WebProduct\WebProject\WebProject.Helper\obj\Debug\WebProject.Helper.pdb

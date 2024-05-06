@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="DB.cs" />
+    <Compile Include="Context.cs" />
     <Compile Include="Entities\DBModels\AdminEF.cs" />
     <Compile Include="Entities\DBModels\CartItemEF.cs" />
     <Compile Include="Entities\DBModels\CategoryTypeEF.cs" />

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static WebProject.Domain.DB;
+using WebProject.Domain;
 using System.Data.Entity;
 using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
 using WebProject.Domain.Entities.DBModels;
 using WebProject.Domain.Entities.User;
-using WebProject.Domain;
 using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.Core

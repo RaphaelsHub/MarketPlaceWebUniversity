@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using WebProject.Domain.Entities.User;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using static WebProject.Domain.DB;
+using WebProject.Domain;
 using System.Data.Entity;
 
 namespace WebProject.Domain.Entities.DBModels
