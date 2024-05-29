@@ -5,6 +5,7 @@ using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
 using WebProject.Domain.Entities.DBModels;
 using WebProject.Domain.Entities.User;
 using WebProject.Domain;
+using WebProject.ModelAccessLayer.Model;
 
 namespace WebProject.BusinessLogic.Core
 {
@@ -76,29 +77,39 @@ namespace WebProject.BusinessLogic.Core
 
             }
         }
-        internal StandartResponse AddToUserCart(CartItemEF cartItem)
+
+        private CartItemEF CretateCartItemEF(CartItemEF cartItem)
         {
             using (var db = new Context())
             {
-                var userData = cartItem.User;
-                // Получаем пользователя из базы данных по его Id
-                UserEF userFromDb = db.Users.FirstOrDefault(u => u.Id == userData.Id);
-                if (userFromDb != null)
-                {
-                    // Обновляем данные пользователя в объекте UserData
-                    userFromDb.CartItems.Add(cartItem);
-                    db.SaveChanges();
+                var newCartItem = db.CartItems.Add(cartItem);
+                db.SaveChanges();
+                return newCartItem;
+            }
+        }
 
-                    // Возвращаем обновленный объект UserData
-                    return new StandartResponse { Status = true };
+        internal StandartResponse AddToUserCart(CartItemEF cartItem)
+        {
+            var userResponse = FindUserEF(cartItem.User.Id);
+            if (userResponse.IsExist == false)
+                return new StandartResponse { Status = false, ResponseMessage = "User not found in database." };
 
-                }
-                else
-                {
-                    // Если пользователя с указанным Id не найдено в базе данных,
-                    // возможно, стоит сгенерировать исключение или выполнить другое действие по обработке этой ситуации
-                    return new StandartResponse { Status = false, ResponseMessage = "User not found in database." };
-                }
+            if (cartItem == null)
+                return new StandartResponse { Status = false, ResponseMessage = "cartItem is null" };
+
+            var newCartItem = CretateCartItemEF(cartItem);
+
+            using (var db = new Context())
+            {
+                // Обновляем данные пользователя в объекте UserData
+                var theNewestCartItem = db.CartItems.FirstOrDefault(x => x.CartItemId == newCartItem.CartItemId);
+                var theNewestUser = db.Users.FirstOrDefault(x => x.Id == userResponse.Data.Id);
+
+                theNewestUser.CartItems.Add(theNewestCartItem);
+                db.SaveChanges();
+
+                // Возвращаем обновленный объект UserData
+                return new StandartResponse { Status = true };
             }
         }
         internal StandartResponse DeleteFromUserCart(CartItemEF cartItem)
