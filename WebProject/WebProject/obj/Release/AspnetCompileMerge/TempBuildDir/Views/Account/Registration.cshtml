@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li><span>Registration</span></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+@model WebProject.ModelAccessLayer.Model.RegistrationData
+
+<div class="container-fluid mb-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-register bg-white p-3">
+                <h1 class="section-title h3"><span>Registration</span></h1>
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        @using (Html.BeginForm("Registration", "Account", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
+                        {
+                            <div class="mb-3">
+                                @Html.LabelFor(model => model.Name, new { @class = "form-label required" })
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Name" })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="mb-3">
+                                @Html.LabelFor(model => model.Email, new { @class = "form-label required" })
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Email" })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="mb-3">
+                                @Html.LabelFor(model => model.Phone, new { @class = "form-label required" })
+                                @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Phone" })
+                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="mb-3">
+                                @Html.LabelFor(model => model.Password, new { @class = "form-label required" })
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Password" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-warning">Registration</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

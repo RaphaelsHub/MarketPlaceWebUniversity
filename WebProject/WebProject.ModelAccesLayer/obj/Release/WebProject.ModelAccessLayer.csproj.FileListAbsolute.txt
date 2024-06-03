@@ -1,0 +1,12 @@
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Release\WebProject.ModelAccesLayer.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Release\WebProject.ModelAccesLayer.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Release\WebProject.Domain.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Release\EntityFramework.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Release\WebProject.Domain.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Release\WebProject.Domain.dll.config
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\bin\Release\EntityFramework.xml
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Release\WebProject.ModelAccessLayer.csproj.AssemblyReference.cache
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Release\WebProject.ModelAccessLayer.csproj.CoreCompileInputs.cache
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Release\WebProje.68DD171D.Up2Date
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Release\WebProject.ModelAccesLayer.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.ModelAccesLayer\obj\Release\WebProject.ModelAccesLayer.pdb

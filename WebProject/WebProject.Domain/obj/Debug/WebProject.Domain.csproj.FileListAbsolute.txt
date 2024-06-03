@@ -62,5 +62,3 @@ D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProj
 D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.CopyComplete
 D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.dll
 D:\!Univer\Univer_4th_sem\!Project_2\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.pdb
-D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.Migrations.NewDB.resources
-D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.Domain\obj\Debug\WebProject.Domain.csproj.GenerateResource.cache

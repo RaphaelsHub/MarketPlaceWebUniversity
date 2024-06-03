@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "NewProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li><span>Cart</span></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+@model WebProject.ModelAccessLayer.Model.Product
+
+<div class="container-fluid">
+    @using (Html.BeginForm("NewProduct", "Admin", FormMethod.Post, new { @class = "needs-validation", @novalidate = "novalidate" }))
+    {
+        <div id="photoUrls">
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.PhotoUrl, new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.PhotoUrl[0], new { @class = "form-control", placeholder = "https://example.com/photo1.jpg", aria_label = "PhotoUrl", required = "required" })
+                @Html.ValidationMessageFor(model => model.PhotoUrl[0], "Paste an url photo here.", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div id="dynamicPhotoFields"></div>
+
+        <div class="col-md-12 mt-3">
+            <button type="button" class="btn btn-secondary" id="addPhotoField">Add Photo URL</button>
+        </div>
+
+        <div class="col-md-12">
+            @Html.LabelFor(model => model.Name, new { @class = "form-label" })
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Ryzen 5600Rx", aria_label = "Name", required = "required" })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Price, new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Price, new { @class = "form-control", placeholder = "999.38$", aria_label = "Price", required = "required" })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Amount, new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Amount, new { @class = "form-control", placeholder = "10", aria_label = "Amount", required = "required" })
+                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Details, new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Details, new { @class = "form-control", placeholder = "Computer", aria_label = "Details", required = "required" })
+                @Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            @Html.LabelFor(model => model.ShortDescription, new { @class = "form-label" })
+            @Html.TextBoxFor(model => model.ShortDescription, new { @class = "form-control", placeholder = "Short Description", aria_label = "ShortDescription", required = "required" })
+            @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-12">
+            @Html.LabelFor(model => model.FullDescription, new { @class = "form-label" })
+            @Html.TextAreaFor(model => model.FullDescription, new { @class = "form-control", rows = "4", placeholder = "Full Description", required = "required" })
+            @Html.ValidationMessageFor(model => model.FullDescription, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Category, Subcategory, and Filters Section -->
+        <div id="categories" class="col-md-12 mt-3">
+            <button type="button" class="btn btn-secondary" id="addCategory">Add Category</button>
+        </div>
+
+        <div class="col-md-12 mt-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+        var photoCount = 0;
+        var categoryCount = 0;
+
+        $("#addPhotoField").click(function () {
+            var fieldHtml = '<div class="col-md-12 mt-3">' +
+                '<label class="form-label">PhotoURL ' + (++photoCount) + '</label>' +
+                '<input type="text" name="PhotoUrl[' + photoCount + ']" class="form-control" placeholder="https://example.com/photo' + photoCount + '.jpg" required />' +
+                '</div>';
+            $("#dynamicPhotoFields").append(fieldHtml);
+        });
+
+        $("#addCategory").click(function () {
+            var categoryHtml = '<div class="col-md-12 mt-3 category">' +
+                '<label class="form-label">Category</label>' +
+                '<input type="text" name="AllCategories.Categories[' + categoryCount + '].Name" class="form-control" placeholder="Category Name" required />' +
+                '<div id="subcategories_' + categoryCount + '" class="subcategory-container mt-3"></div>' +
+                '<div class="col-md-12 mt-3">' +
+                '<button type="button" class="btn btn-secondary addSubcategory" data-category="' + categoryCount + '">Add Subcategory</button>' +
+                '<button type="button" class="btn btn-secondary addFilter d-none" data-category="' + categoryCount + '">Add Filter</button>' +
+                '</div>' +
+                '</div>';
+            $("#categories").append(categoryHtml);
+            categoryCount++;
+            toggleButtons();
+        });
+
+        $(document).on("click", ".addSubcategory", function () {
+            var categoryIndex = $(this).data("category");
+            var subcategoryCount = $("#subcategories_" + categoryIndex + " .subcategory").length;
+            var subcategoryHtml = '<div class="col-md-12 mt-3 subcategory">' +
+                '<label class="form-label">Subcategory</label>' +
+                '<input type="text" name="AllCategories.Categories[' + categoryIndex + '].Subcategories[' + subcategoryCount + '].Name" class="form-control" placeholder="Subcategory Name" required />' +
+                '<div id="filters_' + categoryIndex + '_' + subcategoryCount + '" class="filter-container mt-3"></div>' +
+                '</div>';
+            $("#subcategories_" + categoryIndex).append(subcategoryHtml);
+            $(this).siblings(".addFilter").removeClass("d-none");
+            $(this).remove();
+            toggleButtons();
+        });
+
+        $(document).on("click", ".addFilter", function () {
+            var categoryIndex = $(this).data("category");
+            var subcategoryCount = $("#subcategories_" + categoryIndex + " .subcategory").length - 1;
+            var filterCount = $("#filters_" + categoryIndex + "_" + subcategoryCount + " .filter").length;
+            var filterHtml = '<div class="col-md-12 mt-3 filter">' +
+                '<label class="form-label">Filter</label>' +
+                '<input type="text" name="AllCategories.Categories[' + categoryIndex + '].Subcategories[' + subcategoryCount + '].Filters[' + filterCount + '].NameFilter" class="form-control" placeholder="Filter Name" required />' +
+                '<label class="form-label">Parameters</label>' +
+                '<input type="text" name="AllCategories.Categories[' + categoryIndex + '].Subcategories[' + subcategoryCount + '].Filters[' + filterCount + '].Parameters[0]" class="form-control" placeholder="Parameter1, Parameter2, ..." required />' +
+                '</div>';
+            $("#filters_" + categoryIndex + "_" + subcategoryCount).append(filterHtml);
+            toggleButtons();
+        });
+
+        function toggleButtons() {
+            $(".category").each(function () {
+                var subcategoryCount = $(this).find(".subcategory").length;
+                if (subcategoryCount > 0) {
+                    $(this).find(".addSubcategory").addClass("d-none");
+                } else {
+                    $(this).find(".addSubcategory").removeClass("d-none");
+                }
+            });
+        }
+    });
+</script>

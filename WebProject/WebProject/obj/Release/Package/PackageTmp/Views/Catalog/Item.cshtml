@@ -1,0 +1,245 @@
+﻿@{
+    ViewBag.Title = "Item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model  WebProject.ModelAccessLayer.Model.Product
+
+@if (Model != null)
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <nav class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="@Url.Action("Index", "Home")">Home</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Items", "Catalog")">Category</a>
+                        </li>
+                        <li>
+                            <span>@Model.Name</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-lg-4 mb-3">
+                <div class="bg-white h-100 position-relative">
+                    <!-- Добавляем класс position-relative -->
+                    @if (Model.PhotoUrl.Count == 1)
+                    {
+                        <img src="@Model.PhotoUrl[0]" class="d-block w-100" alt="...">
+                    }
+
+                    else if (Model.PhotoUrl.Count > 1)
+                    {
+                        <div id="carouselExampleFade" class="carousel carousel-dark slide carousel-fade" data-ride="carousel" data-interval="100">
+                            <div class="carousel-inner">
+                                @for (int i = 0; i < Model.PhotoUrl.Count; i++)
+                                {
+                                    <div class="carousel-item @(i == 0 ? "active" : "")">
+                                        <img src="@Model.PhotoUrl[i]" class="d-block w-100" alt="...">
+                                    </div>
+                                }
+                            </div>
+
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    }
+                    else
+                    {
+                        <!-- Если нет фотографий, то загружаем определенную фотку с репозитория -->
+                        <img src="~/FrontEndAssets/Images/emptyPhoto.png" class="d-block w-100" alt="...">
+                    }
+
+                </div>
+            </div>
+
+            <div class="col-md-7 col-lg-8 mb-3">
+                <div class="bg-white product-content p-3 h-100">
+                    <!--МЕНЯЕМ ТОЛЬКО ИМЯ, ЦЕНУ, описание-->
+                    <h1 class="section-title h3">
+                        <span>@Model.Name</span>
+                    </h1>
+                    <div class="product-price">@Model.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US"))</div>
+                    <p>@Model.ShortDescription</p>
+
+                    @{
+                        bool isAunthificated = false;
+                        int availableQuantity = Model.Amount;
+                    }
+
+                    @if (Session["UserData"] != null)
+                    {
+                        isAunthificated = true;
+                    }
+
+                    @if (isAunthificated)
+                    {
+                        using (Html.BeginForm("AddToCart", "Cart", FormMethod.Post))
+                        {
+                            <input type="hidden" name="cartItem.Id" value="@Model.Id" />
+                            <div class="input-group">
+                                @{
+                                    var defaultQuantity = availableQuantity > 0 ? 1 : 0;
+                                }
+                                <input type="number" class="form-control mr-sm-2" name="cartItem.Quantity" value="@defaultQuantity" min="0" max="@availableQuantity" style="width: 80px;">
+                                <button type="submit" class="btn btn-warning" @(availableQuantity == 0 ? "disabled" : "")>
+                                    <i class="fas fa-shopping-cart"></i> Add to cart
+                                </button>
+                            </div>
+                            if (availableQuantity == 0)
+                            {
+                                <div class="alert alert-warning ml-sm-2 mt-2" role="alert">
+                                    There are currently no products available.
+                                </div>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Login", "Account")" class="btn btn-warning">
+                            <i class="fas fa-sign-in-alt"></i> Login to add to cart
+                        </a>
+                    }
+
+
+                    @if (TempData["Message"] != null)
+                    {
+                        <div id="messageDiv" class="alert alert-success mt-2" role="alert">
+                            @TempData["Message"]
+                        </div>
+                    }
+
+                    <script>
+                        setTimeout(function () {
+                            $('#messageDiv').fadeOut('fast');
+                        }, 5000); // 5 seconds
+                    </script>
+
+                    <div class="row mt-3">
+                        <div class="col-lg-4 mb-2">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                        Garanty
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        <li>1 year warranty</li>
+                                        <li>Return of goods within 14 day</li>
+                                        <li>Quality assurance</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mb-2">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fa-solid fa-truck-fast"></i> Delivery
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        <li>Delivery throughout the country</li>
+                                        <li>Mail delivery</li>
+                                        <li>Pickup</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 mb-2">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fa-regular fa-credit-card"></i> Оплата
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        <li>Cashless payment</li>
+                                        <li>VISA/MasterCard</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Подгрузка описания-->
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="product-content-details bg-white p-4">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
+                                    data-bs-target="#description-tab-pane" type="button" role="tab"
+                                    aria-controls="description-tab-pane"
+                                    aria-selected="true">
+                                Description
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="features-tab" data-bs-toggle="tab"
+                                    data-bs-target="#features-tab-pane" type="button" role="tab"
+                                    aria-controls="features-tab-pane" aria-selected="false">
+                                Features
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="description-tab-pane" role="tabpanel"
+                             aria-labelledby="description-tab" tabindex="0">
+                            <p>@Model.FullDescription</p>
+                        </div>
+                        <div class="tab-pane fade" id="features-tab-pane" role="tabpanel"
+                             aria-labelledby="features-tab" tabindex="0">
+                            <table class="table">
+                                <tbody>
+
+
+                                    @if (Model.AllCategories?.Count>0)
+                                    {
+                                        foreach (var b in Model.AllCategories)
+                                        {
+                                            foreach (var c in b.Filters)
+                                            {
+                                            <tr>
+                                                <th scope="row">@c.NameFilter</th>
+                                                <td>
+                                                    @foreach (var d in c.Parameters)
+
+                                                    {
+                                                        @d
+                                                    }
+                                                </td>
+                                            </tr>
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

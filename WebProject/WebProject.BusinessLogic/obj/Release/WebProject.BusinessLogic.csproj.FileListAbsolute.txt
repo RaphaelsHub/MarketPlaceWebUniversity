@@ -1,0 +1,17 @@
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\WebProject.BusinessLogic.dll.config
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\WebProject.BusinessLogic.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\WebProject.BusinessLogic.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\EntityFramework.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\EntityFramework.SqlServer.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\WebProject.Domain.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\WebProject.ModelAccesLayer.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\WebProject.Domain.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\WebProject.Domain.dll.config
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\WebProject.ModelAccesLayer.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\EntityFramework.xml
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\bin\Release\EntityFramework.SqlServer.xml
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Release\WebProject.BusinessLogic.csproj.AssemblyReference.cache
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Release\WebProject.BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Release\WebProje.ADEFDFFC.Up2Date
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Release\WebProject.BusinessLogic.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject.BusinessLogic\obj\Release\WebProject.BusinessLogic.pdb

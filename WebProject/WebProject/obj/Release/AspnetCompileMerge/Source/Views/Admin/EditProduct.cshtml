@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "EditProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model WebProject.ModelAccessLayer.Model.Product
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li><span>Edit Product</span></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    @using (Html.BeginForm("ReplaceProduct", "Admin", FormMethod.Post, new { @class = "needs-validation", @novalidate = "novalidate" }))
+    {
+        @Html.HiddenFor(model => model.Id)
+
+        <div id="photoUrls">
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.PhotoUrl, new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.PhotoUrl[0], new { @class = "form-control", placeholder = "https://example.com/photo1.jpg", aria_label = "PhotoUrl", required = "required" })
+                @Html.ValidationMessageFor(model => model.PhotoUrl[0], "Paste an url photo here.", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div id="dynamicPhotoFields"></div>
+
+        <div class="col-md-12 mt-3">
+            <button type="button" class="btn btn-secondary" id="addPhotoField">Add Photo URL</button>
+        </div>
+
+        <div class="col-md-12">
+            @Html.LabelFor(model => model.Name, new { @class = "form-label" })
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Ryzen 5600Rx", aria_label = "Name", required = "required" })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Price, new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Price, new { @class = "form-control", placeholder = "999.38$", aria_label = "Price", required = "required" })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Amount, new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Amount, new { @class = "form-control", placeholder = "10", aria_label = "Amount", required = "required" })
+                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Details, new { @class = "form-label" })
+                @Html.TextBoxFor(model => model.Details, new { @class = "form-control", placeholder = "Computer", aria_label = "Details", required = "required" })
+                @Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            @Html.LabelFor(model => model.ShortDescription, new { @class = "form-label" })
+            @Html.TextBoxFor(model => model.ShortDescription, new { @class = "form-control", placeholder = "Short Description", aria_label = "ShortDescription", required = "required" })
+            @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-12">
+            @Html.LabelFor(model => model.FullDescription, new { @class = "form-label" })
+            @Html.TextAreaFor(model => model.FullDescription, new { @class = "form-control", rows = "4", placeholder = "Full Description", required = "required" })
+            @Html.ValidationMessageFor(model => model.FullDescription, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-12 mt-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+        var photoCount = 1;
+
+        $("#addPhotoField").click(function () {
+            var fieldHtml = '<div class="col-md-12 mt-3">' +
+                '<label class="form-label">PhotoURL ' + (++photoCount) + '</label>' +
+                '<input type="text" name="PhotoUrl[' + (photoCount - 1) + ']" class="form-control" placeholder="https://example.com/photo' + photoCount + '.jpg" required />' +
+                '</div>';
+
+            $("#dynamicPhotoFields").append(fieldHtml);
+        });
+    });
+</script>

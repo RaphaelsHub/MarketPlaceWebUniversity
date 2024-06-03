@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Delivery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <nav class="breadcrumbs">
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                    <li><span>Delivery</span></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+@model List<WebProject.ModelAccessLayer.Model.OrderModel>
+
+@if (Model?.Count>0)
+{
+    <div class="table-responsive">
+        <table class="table align-middle table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID Delivery</th>
+                    <th>Name Surname</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                    <th>City</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Total Cost</th>
+                    <th>Status Delivery</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td class="align-middle text-center">@order.Id</td>
+                        <td class="align-middle text-center">@order.OrderInfo.Name</td>
+                        <td class="align-middle text-center">@order.OrderInfo.Email</td>
+                        <td class="align-middle text-center">@order.OrderInfo.Country</td>
+                        <td class="align-middle text-center">@order.OrderInfo.City</td>
+                        <td class="align-middle text-center">@order.OrderInfo.Address</td>
+                        <td class="align-middle text-center">@order.OrderInfo.Phone</td>
+                        <td class="align-middle text-center">@order.CartData.FinalPrice.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US"))</td>
+                        <td class="align-middle text-center">
+                            <button type="submit" class="btn btn-danger">Status: @order.StatusDelivery.ToString()</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h3>You haven't made any orders yet</h3>
+    </div>
+}

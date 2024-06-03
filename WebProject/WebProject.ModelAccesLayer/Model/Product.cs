@@ -13,9 +13,6 @@ namespace WebProject.ModelAccessLayer.Model
 
         [Required(ErrorMessage = "Name is required.")]
         public string Name { get; set; }
-
-        [Required(ErrorMessage = "Details is required.")]
-        public string Details { get; set; }
         
         //Доделать
         public List<Category> AllCategories { get; set; }

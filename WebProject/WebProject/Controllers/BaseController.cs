@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using WebProject.BusinessLogic;
+using WebProject.BusinessLogic.Core.Levels.GeneralResponse;
 using WebProject.BusinessLogic.Interfaces;
 using WebProject.Domain.Enum;
 using WebProject.ModelAccessLayer.Model;
@@ -38,14 +39,17 @@ namespace WebProject.Controllers
             if (ModelState.IsValid)
             {
                 UserData userData = null;
+                DataResponse<UserData> response = null;
 
                 if (authData is LoginData loginData)
                 {
-                    userData = ((IGuest)_businessLogic.User).Login(loginData);
+                    response = ((IGuest)_businessLogic.User).Login(loginData);
+                    userData = response.Data;
                 }
                 else if (authData is RegistrationData registrationData)
                 {
-                    userData = ((IGuest)_businessLogic.User).Register(registrationData);
+                    response = ((IGuest)_businessLogic.User).Register(registrationData);
+                    userData = response.Data;
                 }
 
                 if (userData != null)
@@ -54,7 +58,7 @@ namespace WebProject.Controllers
                     return RedirectToAction("Index", "Home");
                 }
 
-                ViewBag.ErrorMessage = "Invalid email or password";
+                ViewBag.ErrorMessage = response.ResponseMessage;
                 return View(authData);
             }
 

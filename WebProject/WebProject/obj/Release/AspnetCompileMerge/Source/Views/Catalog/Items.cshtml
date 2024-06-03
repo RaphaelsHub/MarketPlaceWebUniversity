@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "Items";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (Model != null)
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <nav class="breadcrumbs">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><span>@Model.Name</span></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-4">
+                <div class="sidebar">
+
+                    <button class="btn btn-warning w-100 text-start collapse-filters-btn mb-3" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseFilters" aria-expanded="false"
+                            aria-controls="collapseExample">
+                        <i class="fa-solid fa-filter"></i> Filters
+                    </button>
+
+                    <div class="collapse collapse-filters" id="collapseFilters">
+                        <div class="filter-block">
+
+                            @foreach (var obj in Model.Filters)
+                            {
+                                <h5 class="section-title"><span>Filter by @obj.NameFilter</span></h5>
+                                foreach (var obj1 in obj.Parameters)
+                                {
+                                    <form action="">
+                                        <div class="form-check d-flex justify-content-between">
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" value="" id="black">
+                                                <label class="form-check-label" for="black">
+                                                    @obj1
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                }
+
+                            }
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-9 col-md-8">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <h1 class="section-title h3"><span>@Model.Name</span></h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Sort By:</span>
+                            <select class="form-select" aria-label="Sort by:">
+                                <option selected>Default</option>
+                                <option value="1">Name (a-z)</option>
+                                <option value="2">Name (z-a)</option>
+                                <option value="3">Price (low &gt; high)</option>
+                                <option value="4">Price (high &gt; low)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-----------------------------------------------------Данные персонализации продукта---------------------------------------------------------->
+                    @if (Model.Products != null && Model.Products.Count > 0)
+                    {
+                        foreach (var product in Model.Products)
+                        {
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="product-card">
+                                    <div class="product-thumb">
+                                        <!-- Проверка наличия элементов в массиве PhotoUrl перед доступом по индексу -->
+                                        @if (product.PhotoUrl != null && product.PhotoUrl.Count > 0)
+                                        {
+                                            <!-- Ссылка для передачи ID продукта методом GET -->
+                                            <a href="@Url.Action("Item", "Catalog", new { id = product.Id })">
+                                                <img src="@product.PhotoUrl[0]" alt="@product.Name">
+                                            </a>
+                                        }
+                                    </div>
+                                    <div class="product-details">
+                                        <h4>
+                                            <!-- Ссылка для передачи ID продукта методом GET -->
+                                            <a href="@Url.Action("Item", "Catalog", new { id = product.Id })">@product.Name</a>
+                                        </h4>
+                                        <p class="product-excerpt">@product.ShortDescription</p>
+                                        <div class="product-bottom-details d-flex justify-content-between">
+                                            <div class="product-price">
+                                                @product.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US")) <!-- Форматирование цены -->
+                                            </div>
+                                            <div class="product-links">
+                                                <!-- Ссылка для передачи ID продукта методом GET -->
+                                                <a href="@Url.Action("Item", "Catalog", new { id = product.Id })" class="btn btn-outline-secondary add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

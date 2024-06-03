@@ -1,87 +1,87 @@
 ﻿@model List<WebProject.ModelAccessLayer.Model.Product>
 
-@{
-    ViewBag.Title = "ViewProducts";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    @{
+        ViewBag.Title = "ViewProducts";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <nav class="breadcrumbs">
-                <ul>
-                    <li><a href="@Url.Action("Index", "Home")">Home</a></li>
-                    <li><span>Products</span></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12 mb-3">
-            <div class="cart-content p-3 h-100 bg-white">
-                @if (Model != null && Model.Count > 0)
-                {
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th class="text-center">Photo</th>
-                                    <th class="text-center">ID</th>
-                                    <th class="text-center">Product Name</th>
-                                    <th class="text-center">Short Description</th>
-                                    <th class="text-center">Price</th>
-                                    <th class="text-center">Amount</th>
-                                    <th class="text-center"><i class="fa-solid fa-edit"></i></th>
-                                    <th class="text-center"><i class="fa-regular fa-trash-can"></i></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var product in Model)
-                                {
-                                    <tr class="item-row" data-description="Very speed speed speed speed compudacter">
-                                        <td class="align-middle text-center">
-                                            @if (product.PhotoUrl != null && product.PhotoUrl.Count > 0)
-                                            {
-                                                <img src="@product.PhotoUrl[0]" alt="Product Image" class="img-thumbnail" />
-                                            }
-                                            else
-                                            {
-                                                <span>No image available</span>
-                                            }
-                                        </td>
-                                        <td class="align-middle text-center">@product.Id</td>
-                                        <td class="align-middle text-center">@product.Name</td>
-                                        <td class="align-middle text-center description-cell">@product.ShortDescription</td>
-                                        <td class="align-middle text-center">@product.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US"))</td>
-                                        <td class="align-middle text-center">@product.Amount</td>
-                                        <td class="align-middle text-center">
-                                            <form method="post" action="@Url.Action("EditProduct", "Admin")">
-                                                <input type="hidden" name="id" value="@product.Id" />
-                                                <button type="submit" class="btn btn-danger">Edit</button>
-                                            </form>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <form method="post" action="@Url.Action("DeleteProduct", "Admin")">
-                                                <input type="hidden" name="id" value="@product.Id" />
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                }
-                else
-                {
-                    <div class="text-center">
-                        <h3>There are no products on your site and DB.</h3>
-                    </div>
-                }
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <nav class="breadcrumbs">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                        <li><span>Products</span></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
-</div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 mb-3">
+                <div class="cart-content p-3 h-100 bg-white">
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th class="text-center">Photo</th>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">Product Name</th>
+                                        <th class="text-center">Short Description</th>
+                                        <th class="text-center">Price</th>
+                                        <th class="text-center">Amount</th>
+                                        <th class="text-center"><i class="fa-solid fa-edit"></i></th>
+                                        <th class="text-center"><i class="fa-regular fa-trash-can"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var product in Model)
+                                    {
+                                        <tr class="item-row" data-description="Very speed speed speed speed compudacter">
+                                            <td class="align-middle text-center">
+                                                @if (product.PhotoUrl != null && product.PhotoUrl.Count > 0)
+                                                {
+                                                    <img src="@product.PhotoUrl[0]" alt="Product Image" class="img-thumbnail" />
+                                                }
+                                                else
+                                                {
+                                                    <span>No image available</span>
+                                                }
+                                            </td>
+                                            <td class="align-middle text-center">@product.Id</td>
+                                            <td class="align-middle text-center">@product.Name</td>
+                                            <td class="align-middle text-center description-cell">@product.ShortDescription</td>
+                                            <td class="align-middle text-center">@product.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("en-US"))</td>
+                                            <td class="align-middle text-center">@product.Amount</td>
+                                            <td class="align-middle text-center">
+                                                <form method="post" action="@Url.Action("EditProduct", "Admin")">
+                                                    <input type="hidden" name="id" value="@product.Id" />
+                                                    <button type="submit" class="btn btn-danger">Edit</button>
+                                                </form>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <form method="post" action="@Url.Action("DeleteProduct", "Admin")">
+                                                    <input type="hidden" name="id" value="@product.Id" />
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center">
+                            <h3>There are no products on your site and DB.</h3>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>

@@ -54,11 +54,6 @@
                 @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
             </div>
 
-            <div class="col-md-2">
-                @Html.LabelFor(model => model.Details, new { @class = "form-label" })
-                @Html.TextBoxFor(model => model.Details, new { @class = "form-control", placeholder = "Computer", aria_label = "Details", required = "required" })
-                @Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger" })
-            </div>
         </div>
 
         <div class="col-md-12">

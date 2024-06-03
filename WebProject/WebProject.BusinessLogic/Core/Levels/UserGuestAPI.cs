@@ -20,7 +20,7 @@ namespace WebProject.BusinessLogic.Core.Levels
                 UserDataEF user = db.Users.FirstOrDefault(u => u.Password == data.Password && u.Email == data.Email);
 
                 if (user == null)
-                    return new DataResponse<UserDataEF>();
+                    return new DataResponse<UserDataEF> { ResponseMessage = "Email or password isnt correct!"};
 
                 user.LogTime = DateTime.Now;
                 db.SaveChanges();
@@ -50,13 +50,13 @@ namespace WebProject.BusinessLogic.Core.Levels
                 }
 
                 if (user.Name == data.Name)
-                    return new DataResponse<UserDataEF> { Data = null, IsExist = true, ResponseMessage = "Already exist user with same Name" };
+                    return new DataResponse<UserDataEF> { Data = null, IsExist = true, ResponseMessage = "Already exist user with same Name!" };
 
                 if (user.Email == data.Email)
-                    return new DataResponse<UserDataEF> { Data = null, IsExist = true, ResponseMessage = "Already exist user with same Email" };
+                    return new DataResponse<UserDataEF> { Data = null, IsExist = true, ResponseMessage = "Already exist user with same Email!" };
 
                 if (user.PhoneNumber == data.Phone)
-                    return new DataResponse<UserDataEF> { Data = null, IsExist = true, ResponseMessage = "Already exist user with same Phone Number" };
+                    return new DataResponse<UserDataEF> { Data = null, IsExist = true, ResponseMessage = "Already exist user with same Phone Number!" };
 
                 return new DataResponse<UserDataEF> { Data = null, IsExist = true, ResponseMessage = "Unexpected Error" };
             }

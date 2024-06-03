@@ -25,6 +25,10 @@ namespace WebProject.Controllers
         public ActionResult Index()
         {
             AllCategories = _businessLogic.User.GetCategoriesView();
+
+            if(AllCategories == null)
+                AllCategories = new List<Category>();
+
             return View(_businessLogic.User.GetAllProducts());
         }
 

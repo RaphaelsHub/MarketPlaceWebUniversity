@@ -23,107 +23,81 @@
                                 <a class="nav-link active" aria-current="page" href="@Url.Action("Index", "Home")">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">Catalog</a>
-
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catalog</a>
                                 @{
                                     var mod = WebProject.Controllers.HomeController.AllCategories;
                                 }
-
-                                @if (mod?.Count>0)
+                                @if (mod?.Count > 0)
                                 {
-                                        <ul id="subcategoriesDropdown" class="dropdown-menu dropdown-menu-end">
-                                            @foreach (var category in mod)
+                                    <ul class="dropdown-menu">
+                                        @foreach (var category in mod)
+                                        {
+                                            if (category != null)
                                             {
-                                                if (category != null)
-                                                {
-                                                    <li>
-                                                        <a class="dropdown-item arrow-down" href="javascript:void(0);" onclick="toggleSubcategories(this)">@category.Name</a>
-                                                        <ul class="subcategory-list">
-                                                            @if (category.Subcategories != null && category.Subcategories.Any())
+                                                <li class="dropdown-submenu">
+                                                    <a class="dropdown-item dropdown-toggle" href="#">@category.Name</a>
+                                                    <ul class="dropdown-menu">
+                                                        @if (category.Subcategories != null && category.Subcategories.Any())
+                                                        {
+                                                            foreach (var subcategory in category.Subcategories)
                                                             {
-                                                                foreach (var subcategory in category.Subcategories)
-                                                                {
-                                                                    <li class="dropdown-item">
-                                                                        <a class="dropdown-item" href="@Url.Action("Items", "Catalog", new { idChildCategory = subcategory.IdCategory })">@subcategory.Name</a>
-                                                                    </li>
-                                                                }
+                                                                <li>
+                                                                    <a class="dropdown-item" href="@Url.Action("Items", "Catalog", new { idChildCategory = subcategory.IdCategory })">@subcategory.Name</a>
+                                                                </li>
                                                             }
-                                                        </ul>
-                                                    </li>
-                                                }
+                                                        }
+                                                    </ul>
+                                                </li>
                                             }
-                                        </ul>
+                                        }
+                                    </ul>
                                 }
-
+                            </li>
+                            <!-- Search Form -->
+                            <li class="nav-item mt-3">
+                                <form id="searchForm" action="@Url.Action("Search", "Home")" method="get" onsubmit="return validateSearchForm()">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control" name="text" id="searchInput" placeholder="Searching..." aria-label="Searching..." aria-describedby="button-search">
+                                        <button class="btn btn-outline-warning btn-sm" type="submit" id="button-search">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
+                                    </div>
+                                </form>
                             </li>
                         </ul>
                     </div>
-
-                    <script>
-                        // Скрыть все подкатегории при загрузке страницы
-                        document.querySelectorAll('.subcategory-list').forEach((sublist) => {
-                            sublist.style.display = 'none';
-                        });
-
-                        function toggleSubcategories(element) {
-                            var subcategories = element.nextElementSibling;
-                            if (subcategories.style.display === 'none') {
-                                subcategories.style.display = 'block';
-                            } else {
-                                subcategories.style.display = 'none';
-                            }
-                        }
-                    </script>
-
                 </div>
-
-
 
                 <div class="col- col-sm-4">
                     <div class="header-top-account d-flex justify-content-end">
-                        <form id="searchForm" action="@Url.Action("Search", "Home")" method="get" onsubmit="return validateSearchForm()">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" name="text" id="searchInput" placeholder="Searching..." aria-label="Searching..." aria-describedby="button-search">
-                                <button class="btn btn-outline-warning btn-sm" type="submit" id="button-search">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                            </div>
-                        </form>
-
-
                         @{
                             bool isAuthorized = false;
                             bool isAdmin = false;
 
-                            // Проверяем наличие данных о пользователе в сессии
+                            // Check if user data exists in session
                             if (Session["UserData"] != null)
                             {
-                                // Преобразуем данные о пользователе к соответствующему типу
                                 var userData = (WebProject.ModelAccessLayer.Model.UserData)Session["UserData"];
                                 isAuthorized = true;
                                 isAdmin = userData.StatusUser == WebProject.Domain.Enum.StatusUser.Admin;
                             }
 
-                            // Выводим соответствующие кнопки в зависимости от авторизации и роли пользователя
                             if (isAuthorized)
                             {
-                                <button class="btn btn-sm" type="button" onclick="location.href='@Url.Action("Buy", "Cart")'"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
-                                <button class="btn btn-sm" type="button" onclick="location.href='@Url.Action("Delivery", "Cart")'">My Orders</button>
-
+                                <button class="btn btn-sm" type="button" onclick="location.href='@Url.Action("Buy", "Cart")'"><i class="fa-solid fa-cart-shopping"></i> Cart</button>
+                                <button class="btn btn-sm" type="button" onclick="location.href='@Url.Action("Delivery", "Cart")'">Orders</button>
                                 if (isAdmin)
                                 {
-                                    <div class="btn-group">
-                                        <div class="dropdown">
-                                            <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">Admin</button>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="@Url.Action("ViewProducts", "Admin")">View Products</a></li>
-                                                <li><a class="dropdown-item" href="@Url.Action("NewProduct", "Admin")">Add a Product</a></li>
-                                                <li><a class="dropdown-item" href="@Url.Action("ViewDelivery", "Admin")">View Delivery</a></li>
-                                            </ul>
-                                        </div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="@Url.Action("ViewProducts", "Admin")">View Products</a></li>
+                                            <li><a class="dropdown-item" href="@Url.Action("NewProduct", "Admin")">Add a Product</a></li>
+                                            <li><a class="dropdown-item" href="@Url.Action("ViewDelivery", "Admin")">View Delivery</a></li>
+                                        </ul>
                                     </div>
                                 }
-                                <button class="btn btn-sm" type="button" onclick="location.href='@Url.Action("LogOut", "Account")'">Log Out </button>
+                                <button class="btn btn-sm" type="button" onclick="location.href='@Url.Action("LogOut", "Account")'">Log Out</button>
                             }
                             else
                             {
@@ -133,18 +107,38 @@
                         }
                     </div>
                 </div>
-
             </div>
         </nav>
     </div>
-    <script>
-        function validateSearchForm() {
-            var searchText = document.getElementById("searchInput").value.trim();
-            if (searchText === "") {
-                alert("Please enter a search term.");
-                return false; // Отменяем отправку формы, если строка пуста
-            }
-            return true; // Разрешаем отправку формы, если строка не пуста
-        }
-    </script>
 </header>
+
+<script>
+    document.querySelectorAll('.dropdown-submenu .dropdown-toggle').forEach((element) => {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.nextElementSibling.classList.toggle('show');
+        });
+    });
+
+    function validateSearchForm() {
+        var searchText = document.getElementById("searchInput").value.trim();
+        if (searchText === "") {
+            alert("Please enter a search term.");
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<style>
+    .dropdown-submenu {
+        position: relative;
+    }
+
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+        }
+</style>
