@@ -418,7 +418,8 @@ ul.social-icons {
 footer {
     background-color: var(--contrast-color);
     padding: 80px 0;
-    color: #fff
+    color: #fff;
+
 }
 
     footer h4 {
@@ -656,7 +657,7 @@ footer {
     max-width: auto
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1500px) {
     .footer h4 {
         font-size: 1.2rem; /* Уменьшенный размер шрифта заголовков */
     }
@@ -665,74 +666,8 @@ footer {
         font-size: 0.9rem; /* Уменьшенный размер шрифта элементов списка */
     }
 }
-@media (max-width: 768px) {
-    #searchForm {
-        display: none;
-    }
 
-    #searchFormOffcanvas {
-        display: block !important;
-    }
+
+
 }
 
-/* Убираем белую обводку у кнопок */
-.btn-outline-light {
-    border-color: transparent;
-}
-
-/* Изменяем шрифт выпадающего меню на белый */
-.dropdown-menu {
-    background-color: #343a40; /* Меняем цвет фона выпадающего меню на темный */
-    color: white; /* Устанавливаем белый цвет текста */
-}
-
-/* Убираем белую обводку у пунктов выпадающего меню */
-.dropdown-item {
-    color: white; /* Устанавливаем белый цвет текста */
-}
-
-    .dropdown-item:hover, .dropdown-item:focus {
-        background-color: #495057; /* Темный цвет фона при наведении или фокусе */
-    }
-
-    .dropdown-item:active {
-        background-color: #6c757d; /* Еще более темный цвет фона при нажатии */
-        color: white; /* Белый цвет текста при нажатии */
-    }
-
-/* Убираем белую обводку при фокусе у кнопок */
-.btn:focus, .btn:active {
-    outline: none;
-    box-shadow: none;
-}
-/* Убираем белую обводку у кнопок */
-.btn-outline-light {
-    border-color: transparent;
-}
-
-/* Изменяем шрифт выпадающего меню на белый */
-.dropdown-menu {
-    background-color: #343a40; /* Меняем цвет фона выпадающего меню на темный */
-    color: white; /* Устанавливаем белый цвет текста */
-}
-
-/* Убираем белую обводку у пунктов выпадающего меню */
-.dropdown-item {
-    color: white; /* Устанавливаем белый цвет текста */
-}
-
-    .dropdown-item:hover, .dropdown-item:focus {
-        background-color: #495057; /* Темный цвет фона при наведении или фокусе */
-        color: white; /* Белый цвет текста при наведении или фокусе */
-    }
-
-    .dropdown-item:active {
-        background-color: #6c757d; /* Еще более темный цвет фона при нажатии */
-        color: white; /* Белый цвет текста при нажатии */
-    }
-
-/* Убираем белую обводку при фокусе у кнопок */
-.btn:focus, .btn:active {
-    outline: none;
-    box-shadow: none;
-}

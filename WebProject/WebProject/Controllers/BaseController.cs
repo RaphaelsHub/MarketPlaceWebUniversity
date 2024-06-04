@@ -29,14 +29,14 @@ namespace WebProject.Controllers
 
         protected ActionResult CheckSessionAndReturnView(string viewName)
         {
-            if (Session["UserData"] == null)
+            if (Session["UserData"] == null || _businessLogic.User is IGuest)
                 return View(viewName);
             return RedirectToAction("Index", "Home");
         }
 
         protected ActionResult HandleUserAuthentication(object authData)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && _businessLogic.User is IGuest)
             {
                 UserData userData = null;
                 DataResponse<UserData> response = null;

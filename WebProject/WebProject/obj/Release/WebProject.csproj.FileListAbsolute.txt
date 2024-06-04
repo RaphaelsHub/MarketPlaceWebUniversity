@@ -82,3 +82,10 @@ D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\obj\Release\WebPr
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\obj\Release\WebProject.csproj.Up2Date
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\obj\Release\WebProject.dll
 D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\obj\Release\WebProject.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\Antlr3.Runtime.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\Newtonsoft.Json.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\System.Web.Optimization.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\WebGrease.dll
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\Antlr3.Runtime.pdb
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\Newtonsoft.Json.xml
+D:\Repositories\MarketPlaceWebUniversity\WebProject\WebProject\bin\System.Web.Optimization.xml
