@@ -3,35 +3,39 @@
   "WorkspaceRootPath": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6B54E2B5-B484-41F4-A47B-8C4E70F663C1}|WebProject.Domain\\WebProject.Domain.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject.domain\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B54E2B5-B484-41F4-A47B-8C4E70F663C1}|WebProject.Domain\\WebProject.Domain.csproj|solutionrelative:webproject.domain\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\webproject\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\frontendassets\\css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\frontendassets\\css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\views\\partials\\header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\webproject\\views\\partials\\header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\partials\\header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\webproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\webproject\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\webproject\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|d:\\repositories\\marketplacewebuniversity\\webproject\\webproject\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\webproject\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F80B0C2-7F0F-4D1D-98CF-08C805A03522}|WebProject\\WebProject.csproj|solutionrelative:webproject\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 612,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Context.cs",
+              "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.Domain\\Context.cs",
+              "RelativeDocumentMoniker": "WebProject.Domain\\Context.cs",
+              "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject.Domain\\Context.cs",
+              "RelativeToolTip": "WebProject.Domain\\Context.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T00:54:47.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Header.cshtml",
               "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Views\\Partials\\Header.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Views\\Partials\\Header.cshtml",
@@ -58,25 +75,24 @@
               "RelativeToolTip": "WebProject\\Views\\Partials\\Header.cshtml",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAAEAAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T00:38:56.27Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T00:38:56.27Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "BaseController.cs",
               "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\BaseController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\BaseController.cs",
               "ToolTip": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\BaseController.cs",
               "RelativeToolTip": "WebProject\\Controllers\\BaseController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAgwB8AAABMAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwEEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-04T00:33:04.247Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "WebProject\\Controllers\\AccountController.cs",
@@ -84,12 +100,11 @@
               "RelativeToolTip": "WebProject\\Controllers\\AccountController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T00:32:52.48Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T00:32:52.48Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "main.css",
               "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\FrontEndAssets\\CSS\\main.css",
               "RelativeDocumentMoniker": "WebProject\\FrontEndAssets\\CSS\\main.css",
@@ -102,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Global.asax.cs",
               "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Global.asax.cs",
               "RelativeDocumentMoniker": "WebProject\\Global.asax.cs",
@@ -110,12 +125,11 @@
               "RelativeToolTip": "WebProject\\Global.asax.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T00:16:03.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T00:16:03.425Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "web.config",
               "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Views\\web.config",
               "RelativeDocumentMoniker": "WebProject\\Views\\web.config",
@@ -123,12 +137,11 @@
               "RelativeToolTip": "WebProject\\Views\\web.config",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-06-04T00:16:01.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T00:16:01.67Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebProject\\Views\\Shared\\_Layout.cshtml",
@@ -136,12 +149,11 @@
               "RelativeToolTip": "WebProject\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAAUAAAAAAAAAAAAgwBsAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T00:00:41.96Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T00:00:41.96Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "BundleConfig.cs",
               "DocumentMoniker": "D:\\Repositories\\MarketPlaceWebUniversity\\WebProject\\WebProject\\App_Start\\BundleConfig.cs",
               "RelativeDocumentMoniker": "WebProject\\App_Start\\BundleConfig.cs",
@@ -149,8 +161,7 @@
               "RelativeToolTip": "WebProject\\App_Start\\BundleConfig.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T23:58:50.726Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T23:58:50.726Z"
             }
           ]
         },

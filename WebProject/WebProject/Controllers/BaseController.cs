@@ -36,7 +36,7 @@ namespace WebProject.Controllers
 
         protected ActionResult HandleUserAuthentication(object authData)
         {
-            if (ModelState.IsValid && _businessLogic.User is IGuest)
+            if (ModelState.IsValid && _businessLogic.User is IGuest && Session["UserData"] == null)
             {
                 UserData userData = null;
                 DataResponse<UserData> response = null;
@@ -61,6 +61,8 @@ namespace WebProject.Controllers
                 ViewBag.ErrorMessage = response.ResponseMessage;
                 return View(authData);
             }
+            if (Session["UserData"]!=null) 
+                return RedirectToAction("Index", "Home");
 
             ViewBag.ErrorMessage = "Invalid data";
             return View(authData);
