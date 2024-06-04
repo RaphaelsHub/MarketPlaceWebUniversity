@@ -2,6 +2,7 @@
 
 namespace WebProject
 {
+    /*
     public class BundleConfig
     {
         public static void RegisterBundles(BundleCollection bundles)
@@ -23,4 +24,5 @@ namespace WebProject
             BundleTable.EnableOptimizations = true;
         }
     }
+    */
 }
